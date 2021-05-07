@@ -22,6 +22,12 @@ Next, migrate the database:
 ```
 $ rails db:migrate
 ```
+
+To run the project on rails local server:
+
+```
+$ rails server
+```
 ## Deploying
 
 To deploy the sample app to production, you’ll need a Heroku account
