@@ -1,5 +1,5 @@
 class PostController < ApplicationController
- before_action :set_member, only: %i[ show edit update destroy ]
+ before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /post or /post.json
   def index
@@ -12,7 +12,7 @@ class PostController < ApplicationController
 
   # GET /post/new
   def new
-    @member = Post.new
+    @post = Post.new
   end
 
   # GET /post/1/edit
@@ -21,15 +21,15 @@ class PostController < ApplicationController
 
   # POST /post or /post.json
   def create
-    @member = Post.new(member_params)
+    @post = Post.new(post_params)
 
     respond_to do |format|
-      if @member.save
-        format.html { redirect_to @member, notice: "Member was successfully created." }
-        format.json { render :show, status: :created, location: @member }
+      if @post.save
+        format.html { redirect_to @post, notice: "post was successfully created." }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,33 +37,33 @@ class PostController < ApplicationController
   # PATCH/PUT /post/1 or /post/1.json
   def update
     respond_to do |format|
-      if @member.update(member_params)
-        format.html { redirect_to @member, notice: "Member was successfully updated." }
-        format.json { render :show, status: :ok, location: @member }
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: "post was successfully updated." }
+        format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /post/1 or /post/1.json
   def destroy
-    @member.destroy
+    @post.destroy
     respond_to do |format|
-      format.html { redirect_to post_url, notice: "Member was successfully destroyed." }
+      format.html { redirect_to post_url, notice: "post was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_member
-      @member = Post.find(params[:id])
+    def set_post
+      @post = Post.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def member_params
-      params.require(:member).permit(:name, :email)
+    def post_params
+      params.require(:post).permit(:name, :email)
     end
 end
