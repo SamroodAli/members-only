@@ -1,5 +1,6 @@
 <%= form_with model: @post, local: true do |f|%>
   <div class="field">
+    <%= render 'shared/errors' %>
     <%= f.label :title %><br />
     <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
   </div>
