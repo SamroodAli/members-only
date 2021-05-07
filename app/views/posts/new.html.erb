@@ -1,1 +1,7 @@
-
+<%= form_with model: @post, local: true do |form|%>
+  <%= form.label :title %> <br>
+  <%= form.text_field :title %> <br>
+  <%= form.label :body %> <br>
+  <%= form.text_field :body %> <br>
+  <%= form.submit "Create new post"%>
+<% end %>
