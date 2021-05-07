@@ -12,20 +12,16 @@
             <%= link_to 'Settings', edit_user_registration_path,class:'nav-link  text-white' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path,class:'nav-link  text-white', :method => "delete"%>
+            <%= button_to 'Sign out', destroy_user_session_path, method: :delete ,class:"nav-link  text-dark bg-success border-0 text-white"%>
           </li>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'New Post', "#",class:'nav-link  text-white' %>
-        </li>
-      <% else %>
-        <li class="nav-item active">
-          <%= link_to 'Sign up', new_user_registration_path,class:'nav-link text-white' %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'Log in', new_user_session_path,class:'nav-link text-white' %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to 'Sign up', new_user_registration_path,class:'nav-link text-white' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'Log in', new_user_session_path,class:'nav-link text-white' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
