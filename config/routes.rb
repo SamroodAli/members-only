@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get 'post/index'
   devise_for :users
   resources :members
-  root 'members#index'
+  root 'posts#index'
 end
