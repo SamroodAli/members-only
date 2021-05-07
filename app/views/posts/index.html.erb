@@ -1,7 +1,11 @@
 <div>
   <ul>
     <%@posts.each do |post|  %>
-      <%= post.user.name if signed_in?%>
+      <% if signed_in? %>
+        <span>Author:</span>
+        <%= post.user.name%>
+      <% end %>
+      <span>Content:</span>
       <%= post.body %>
     <% end %>
   </ul>
