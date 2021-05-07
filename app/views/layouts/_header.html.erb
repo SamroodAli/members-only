@@ -8,24 +8,21 @@
       <li class="nav-item">
         <%= link_to 'Posts', "#",class:'nav-link  text-white' %>
       </li>
-      <% if signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'New Post', "#",class:'nav-link  text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Settings', "#",class:'nav-link  text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Sign out', "#",class:'nav-link  text-white' %>
-        </li>
-      <% else %>
-        <li class="nav-item active">
-          <%= link_to 'Sign up', new_user_registration_path,class:'nav-link text-white' %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'Log in', "#",class:'nav-link text-white' %>
-        </li>
-      <% end %>
+      <li class="nav-item">
+        <%= link_to 'New Post', "#",class:'nav-link  text-white' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Settings', "#",class:'nav-link  text-white' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sign out', "#",class:'nav-link  text-white' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Sign up', "#",class:'nav-link text-white' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Log in', "#",class:'nav-link text-white' %>
+      </li>
     </ul>
   </div>
 </nav>
