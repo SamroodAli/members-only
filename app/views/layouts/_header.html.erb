@@ -5,23 +5,24 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Sign up', new_user_path,class:'nav-link text-white' %>
-      </li>
       <li class="nav-item">
         <%= link_to 'Posts', "#",class:'nav-link  text-white' %>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Settings
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <% if signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'New Post', "#",class:'nav-link  text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Settings', "#",class:'nav-link  text-white' %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to 'Sign up', new_user_path,class:'nav-link text-white' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'Log in', "#",class:'nav-link text-white' %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
