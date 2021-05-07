@@ -1,4 +1,9 @@
 <div>
+  <% if @posts.empty? %>
+    <p>No posts currently available</p>
+  <% end %>
+</div>
+<div>
   <ul>
     <%@posts.each do |post|  %>
       <% if signed_in? %>
