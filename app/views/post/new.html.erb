@@ -1,2 +1,16 @@
-<h1>Post#new</h1>
-<p>Find me in app/views/post/new.html.erb</p>
+<%= form_with model: @model, local: true do |form|%>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body, autofocus: true, autocomplete: "body" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
+<% end %>
