@@ -1,5 +1,5 @@
-class PostController < ApplicationController
- before_action :set_post, only: %i[ show edit update destroy ]
+class PostsController < ApplicationController
+   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /post or /post.json
   def index
