@@ -1,0 +1,17 @@
+<div>
+  <% if @posts.empty? %>
+    <p>No posts currently available</p>
+  <% end %>
+</div>
+<div>
+  <ul>
+    <%@posts.each do |post|  %>
+      <% if signed_in? %>
+        <span>Author:</span>
+        <%= post.user.name%>
+      <% end %>
+      <span>Content:</span>
+      <%= post.body %>
+    <% end %>
+  </ul>
+</div>

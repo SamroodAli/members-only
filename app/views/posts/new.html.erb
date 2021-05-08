@@ -1,0 +1,14 @@
+<%= form_with model: @post, local: true do |f|%>
+  <div class="field">
+    <%= render 'shared/errors' %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body, autofocus: true, autocomplete: "body" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create post" %>
+  </div>
+<% end %>

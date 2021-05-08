@@ -1,0 +1,7 @@
+<% if signed_in? %>
+  <span>Title:</span><%= @post.title %>
+  <br>
+  <span>Content:</span><%=@post.body %>
+  <br>
+  <span>Author: <%= @post.user.name %></span>
+<% end %>
